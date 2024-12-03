@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileLength", "FileLength\Fi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinaryFiles", "BinaryFiles\BinaryFiles.vcxproj", "{59D23B25-699A-46C0-8DC9-71F614A73CB5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SymbolDetectionExample", "SymbolDetectionExample\SymbolDetectionExample.vcxproj", "{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{59D23B25-699A-46C0-8DC9-71F614A73CB5}.Release|x64.Build.0 = Release|x64
 		{59D23B25-699A-46C0-8DC9-71F614A73CB5}.Release|x86.ActiveCfg = Release|Win32
 		{59D23B25-699A-46C0-8DC9-71F614A73CB5}.Release|x86.Build.0 = Release|Win32
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Debug|x64.ActiveCfg = Debug|x64
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Debug|x64.Build.0 = Debug|x64
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Debug|x86.ActiveCfg = Debug|Win32
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Debug|x86.Build.0 = Debug|Win32
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Release|x64.ActiveCfg = Release|x64
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Release|x64.Build.0 = Release|x64
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Release|x86.ActiveCfg = Release|Win32
+		{B1EE00A3-9839-4268-B66E-DD622F5D3AC4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
