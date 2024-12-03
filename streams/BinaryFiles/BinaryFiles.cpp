@@ -22,29 +22,14 @@ int main()
 {
     setlocale(LC_ALL, "");
     ifstream fin("..\\data.txt");
-    ofstream fout("results.txt", ios::binary);
+    ofstream fout("results.bin", ios::binary);
     if (fin && fout)
     {
         double a, b, c;
         while (fin >> a >> b >> c)
         {
             auto result = GetQuadraticEquationRoots(a, b, c);
-            switch (result.rootsCount)
-            {
-            case 0:
-                fout << a << " " << b << " " << c
-                    << " 0\n";
-                break;
-            case 1:
-                fout << a << " " << b << " " << c
-                    << " 1 " << result.x1 << "\n";
-                break;
-            case 2:
-                fout << a << " " << b << " " << c
-                    << " 2 " << result.x1
-                    << " " << result.x2 << "\n";
-                break;
-            }
+            fout.write((char*)&result, sizeof(Roots));
         }
         fin.close();
         fout.close();
