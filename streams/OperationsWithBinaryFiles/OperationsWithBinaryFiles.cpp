@@ -6,6 +6,8 @@ using namespace std;
 
 //Данные о человеке
 
+#pragma pack(push, 1)
+
 struct Person
 {
     int id;         // id
@@ -13,6 +15,8 @@ struct Person
     int age;        // возраст
     char gender;    // пол;
 };
+
+#pragma pack(pop)
 
 void SaveDataToBinaryFile()   //запрашивает ввод данных с консоли и сохраняет в двоичный файл
 {                                           // это неправильный способ, так как структуру, хранящую динамические
@@ -48,7 +52,7 @@ void LoadDataFromBinaryFile() // Читаем ранее сохраненные 
             cout << "Рег. номер: " << p.id << '\n';
             cout << "ФИО: " << p.name << '\n';      
             cout << "Возраст: " << p.age << '\n';
-            cout << "Пол: " << p.gender << '\n\n';
+            cout << "Пол: " << p.gender << "\n\n";
         }
         f.close();
     }
@@ -56,9 +60,9 @@ void LoadDataFromBinaryFile() // Читаем ранее сохраненные 
 
 int main()
 {
-    //SetConsoleCP(1251);
-    //SetConsoleOutputCP(1251);
-    //SaveDataToBinaryFile();
-    setlocale(LC_ALL, "");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    SaveDataToBinaryFile();
+    //setlocale(LC_ALL, "");
     LoadDataFromBinaryFile();
 }
