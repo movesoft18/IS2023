@@ -11,4 +11,4 @@ int main()
     getline(cin, s);
     //cin >> s;
     cout << s;
-}
+} 
