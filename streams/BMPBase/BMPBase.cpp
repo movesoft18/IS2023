@@ -77,9 +77,11 @@ void Show4BitImage(BitmapFileHeader& BFH, BitmapInfoHeader& BIH, ifstream& f)
     RGBQuad* palette = new RGBQuad[sizeof(RGBQuad) * colors];// выделяем память для палитры. Количество элементов равно количесвту цветов
     f.read((char*)palette, sizeof(RGBQuad) * colors);// читаем палитру. Она иет сразу за BitmapInfoHeader
     f.seekg(BFH.bfOffBits);// позиционируем указатель файла на начало растровых данных
+    
     int rowLength = BIH.biWidth / 2 + BIH.biWidth % 2;// вычисляем длину строки изображения в байтах
     if (rowLength % 4 != 0) // она должна быть кратна 4-м.
         rowLength = rowLength / 4 * 4 + 4;
+
     unsigned char* bits = new unsigned char[rowLength];// выделяем память для растровых данных
     for (int y = BIH.biHeight - 1; y >= 0; y--) // цикл вывода строк. Строки располагаются снизу-вверх
     {
