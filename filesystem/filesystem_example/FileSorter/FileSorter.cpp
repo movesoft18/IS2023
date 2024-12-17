@@ -5,9 +5,8 @@ using namespace std;
 
 void SortFiles(const path& folder)
 {
-    path parent_dir = folder.parent_path();
-    path images_dir = parent_dir;
-    path labels_dir = parent_dir;
+    path images_dir = folder.parent_path();
+    path labels_dir = images_dir;
     images_dir /= "images";
     labels_dir /= "labels";
     // создаем папки для изображений и аннотаций
@@ -41,7 +40,11 @@ void SortFiles(const path& folder)
                     copy_options::overwrite_existing);
             }
             if (res)
+            {
                 cout << "Файл " << curr_file.filename() << " скопирован" << endl;
+                res = remove(curr_file);
+                if (res) cout << "Файл " << curr_file.filename() << " удален из исходной папки" << endl;
+            }
         }
     }
     
