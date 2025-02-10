@@ -39,7 +39,7 @@ int main()
     setlocale(LC_ALL, "");
     int m[] = { 1,2,4,5,5,6,6,6,7,7,7,8,12,16,17,17,29 };
     int size = sizeof(m) / sizeof(int);
-    int value = 6;
+    int value = 7;
     int index = BinarySearch(m, size, value);
     if (index == -1)
         cout << "Элемент не найден\n";
