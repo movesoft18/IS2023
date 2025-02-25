@@ -34,9 +34,10 @@ Point Pop() // извлекает элемент из стека и возвра
     StackItem* temp; // временная переменная
     if (stack == nullptr) // если стек пуст
     {
-        result.x = 0;   // то операция извлечения невозможна
+        throw std::runtime_error("Невозможно извлечь элемент. Стек пуст.");
+       /* result.x = 0;   // то операция извлечения невозможна
         result.y = 0;   // пока мы не умеем реагировать на такую ситуацию
-        return result;  // поэтому пока возвращаем Point {0,0}
+        return result;  // поэтому пока возвращаем Point {0,0}*/
     }
     result = stack->point; //записываем возвращаемые данные
     temp = stack;   // запоминаем элемент на вершине стека
@@ -52,15 +53,28 @@ void Print(Point point) // для визуализации содержимог�
 
 int main()
 {
-    Push(Point{ 1,1 });
-    Push(Point{ 10,-7 });
-    Push(Point{ 0,0 });
-    auto p1 = Pop();
-    auto p2 = Pop();
-    auto p3 = Pop();
-    Print(p1);
-    Print(p2);
-    Print(p3);
-    cout << IsEmpty();
+    setlocale(LC_ALL, "");
+    try
+    {
+        Push(Point{ 1,1 });
+        Push(Point{ 10,-7 });
+        Push(Point{ 0,0 });
+        auto p1 = Pop();
+        auto p2 = Pop();
+        auto p3 = Pop();
+        auto p4 = Pop();
+        Print(p1);
+        Print(p2);
+        Print(p3);
+        cout << IsEmpty();
+    }
 
+    catch (const std::runtime_error& err)
+    {
+        cout << "runtime error " <<err.what() << endl;
+    }
+    catch (const std::exception& err)
+    {
+        cout << "Произошла какая-то ошибка." << endl;
+    }
 }
