@@ -33,7 +33,6 @@ char Dequeue() // извлечение элемента из очереди
 {
     if (IsEmpty()) 
         throw std::runtime_error("Невозможно извлечь элемент из пустой очереди");
-    // но мы пока не знаем как
     Queue* temp = tail;               // так как мы не храним указатель на голову очереди
     Queue* temp1 = tail;              // нам нужно пробежаться по всему списку
     if (temp->next == nullptr) tail = nullptr;
@@ -65,13 +64,24 @@ void DeleteQueue()  // удаление всей очереди и памяти
 int main()
 {
     setlocale(LC_ALL,"");
-    Enqueue('a');
-    Enqueue('b');
-    Enqueue('c');
-    auto q1 = Dequeue();
-    auto q2 = Dequeue();
-    auto q3 = Dequeue();
-    auto q4 = Dequeue();
+    char q1, q2, q3, q4;
+    try
+    {
+        Enqueue('a');
+        Enqueue('b');
+        Enqueue('c');
+        q1 = Dequeue();
+        q2 = Dequeue();
+        q3 = Dequeue();
+        q4 = Dequeue();
+        cout << q1 << endl;
+        cout << q2 << endl;
+        cout << q3 << endl;
+    }
+    catch (runtime_error& e)
+    {
+        cout << e.what() << endl;
+    }
     cout << q1 << endl;
     cout << q2 << endl;
     cout << q3 << endl;
