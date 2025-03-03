@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{6f44e0a3-b058-4f7b-a883-6ee280017203}</ProjectGuid>
-    <RootNamespace>CrtLib</RootNamespace>
+    <ProjectGuid>{9fabf1cd-bcc6-42f3-af4d-1fe7ff4f5a0a}</ProjectGuid>
+    <RootNamespace>FloodFill</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CrtLib.h" />
+    <ClCompile Include="FloodFill.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CrtLib.cpp" />
+    <ProjectReference Include="..\..\Maze_Game\CrtLib\CrtLib.vcxproj">
+      <Project>{6f44e0a3-b058-4f7b-a883-6ee280017203}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
