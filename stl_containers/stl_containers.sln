@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vector", "vector\vector.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iterators", "iterators\iterators.vcxproj", "{1CFB9CF5-F467-4834-8FA8-E42F53529EA1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VectorSort", "VectorSort\VectorSort.vcxproj", "{E15CD147-07C6-4EAD-8040-42B155705EAA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{1CFB9CF5-F467-4834-8FA8-E42F53529EA1}.Release|x64.Build.0 = Release|x64
 		{1CFB9CF5-F467-4834-8FA8-E42F53529EA1}.Release|x86.ActiveCfg = Release|Win32
 		{1CFB9CF5-F467-4834-8FA8-E42F53529EA1}.Release|x86.Build.0 = Release|Win32
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Debug|x64.ActiveCfg = Debug|x64
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Debug|x64.Build.0 = Debug|x64
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Debug|x86.ActiveCfg = Debug|Win32
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Debug|x86.Build.0 = Debug|Win32
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Release|x64.ActiveCfg = Release|x64
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Release|x64.Build.0 = Release|x64
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Release|x86.ActiveCfg = Release|Win32
+		{E15CD147-07C6-4EAD-8040-42B155705EAA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
