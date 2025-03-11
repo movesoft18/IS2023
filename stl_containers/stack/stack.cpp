@@ -26,9 +26,5 @@ int main()
 		s.pop();
 		cout << value << endl;
 	}
-	for (auto e : s)
-	{
-		cout << e << endl;
-	}
 }
 
