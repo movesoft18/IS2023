@@ -59,7 +59,7 @@ int main()
 {
     setlocale(LC_ALL, "");
     string example = "Эта  функция должна       поделить, строку на части.";
-    auto result = split(example, ',');
+    auto result = split(example, ' ');
     for (auto& s : result)
         cout << s << endl;
     cout << endl;
