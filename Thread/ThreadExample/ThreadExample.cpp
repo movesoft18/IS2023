@@ -18,7 +18,7 @@ int main()
     cout << "Привет из главного потока\n";
     for (int i = 0; i < 2000; i++)
         cout << "Главный поток! ";
-    thr1.join();
-    thr2.join();
+    if (thr1.joinable()) thr1.join();
+    if (thr2.joinable()) thr2.join();
     cout << "Все потоки завершены\n";
 }
