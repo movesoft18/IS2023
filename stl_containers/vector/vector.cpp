@@ -38,7 +38,7 @@ int main()
 
 
 	vector<int> numbers{ 1,2,3,4,5,6,7,8,9 };
-
+	vector<int>v20(numbers.begin(), numbers.end());
 	int first = numbers.front(); // 1
 	int last = numbers.back(); // 5
 	int second = numbers[1]; // 2
