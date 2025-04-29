@@ -4,6 +4,9 @@ using namespace std;
 #include <iostream>
 using namespace std;
 
+
+//#define debug
+
 struct StackItem // собственно сам элемент стека
 {
     char symbol; // точка
@@ -48,11 +51,21 @@ bool IsCorrectString(const string& str)
         switch (e) // и проверяем его
         {
         case '[': //если это открывающая скобка
+#ifdef debug
+            cout << "Встретилась скобка [\n";
+#endif
         case '(':
+#ifdef debug
+            if (e == '(')
+                cout << "Встретилась скобка (\n";
+#endif
         //case '{':
             Push(e); // то помещаем ее символ в стек
             break;
         case ']': // если это открывающая квадратная скобка
+#ifdef debug
+            cout << "Встретилась скобка ]\n";
+#endif
             if (IsEmpty()) // проверяем пуст ли стек, и если стек пуст, значит данная скобка лишняя
                 return false; // ей не соответствует ни одна открывающая, возвращаем false
             if (Pop() != '[')  // если в стеке есть символы, извлекаем его и сравниваем с открывающей скобкой
@@ -62,6 +75,9 @@ bool IsCorrectString(const string& str)
             }
             break;
         case ')':    // те же действия. что и выше, но уже с круглыми скобками
+#ifdef debug
+            cout << "Встретилась скобка )\n";
+#endif
             if (IsEmpty())
                 return false;
             if (Pop() != '(')
@@ -79,6 +95,7 @@ bool IsCorrectString(const string& str)
 
 int main()
 {
+    setlocale(LC_ALL, "");
     cout << IsCorrectString("2*(6x+1)-[(4-6)*(3+x)]^2 -(((3-z)-z)*x)") << endl; // правильное выражение
     cout << IsCorrectString("2*(6x+1))-[(4-6)*(3+x)]^2 -(((3-z)-z)*x)") << endl; // неправильное лишняя ) скобка
     cout << IsCorrectString("2*(6x+1)-[(4-6)*(3+x)]^2 -(((3-z)-z)*x]") << endl; // неправильное нарушен порядок скобок, последняя должна быть ), а по факту ]
