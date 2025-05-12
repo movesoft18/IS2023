@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include <cpr/cpr.h> // библиотека http запросов
+#include <cpr/cpr.h> // библиотека http запросов. Документация на сайте https://docs.libcpr.org/advanced-usage.html
 using namespace std;
 
 int main()
