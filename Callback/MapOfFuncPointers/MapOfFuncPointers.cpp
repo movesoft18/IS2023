@@ -12,7 +12,8 @@ void PrintUnknownMessage() { cout << "Я не знаю, как ответить 
 
 map<string, void(*)()> answers = {
     {"Привет", PrintHello},
-    {"Пока", PrintGoodbye }
+    {"Пока", PrintGoodbye },
+    {"Хочу домой", [](){cout << "Ну так иди!\n"; }},
 };
 
 int main()

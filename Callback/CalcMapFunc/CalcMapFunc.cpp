@@ -27,6 +27,7 @@ map<char, double(*)(double, double)> operations
 	{'*', [](double a, double b) {return a * b; }},
 	{'/', [](double a, double b) {return a / b; }},
 	{'^', [](double a, double b) {return pow(a, b); }},
+	{'%', [](double a, double b) {return round(a / b); }},
 };
 
 double Compute(const char* str)
@@ -59,5 +60,5 @@ double Compute(const char* str)
 
 int main()
 {
-	cout << Compute("10 20 + 3 * 2 / 1 - 2 ^") << endl;
+	cout << Compute("10 20 + 3 * 2 % 1 - 2 ^") << endl;
 }

@@ -50,6 +50,7 @@ int CallbackDiv2(int a)
 }
 
 
+
 void MyFunc(int* a, int count, int (*MyCallbackFunction)(int x))
 {
 	for (int i = 0; i < count; i++)
