@@ -7,6 +7,8 @@ using namespace std;
 
 RenderWindow window(VideoMode(800, 600), "OOP Demo");
 
+
+#pragma region pointbase
 class PointBase
 {
 protected:
@@ -15,7 +17,7 @@ protected:
 
     CircleShape object; // вспомогательное поле - объект sfml
 public:
-    PointBase(float x, float y, bool visible) :
+    PointBase(float x, float y, bool visible = false) :
         x(x), y(y), visible(visible), object(CircleShape(1))
     {
         if (visible) show();
@@ -47,7 +49,6 @@ void PointBase::draw(bool visible)
     auto col = Color::Transparent;
     if (visible)
         col = Color::White;
-    //object.setRadius(1);
     object.setFillColor(col);
     object.setOutlineColor(col);
     object.setOutlineThickness(1);
@@ -110,6 +111,57 @@ float PointBase::getY() const
 {
     return y;
 }
+#pragma endregion
+
+
+#pragma region colorpoint
+class ColorPoint : public PointBase
+{
+protected:
+    Color color;
+
+    void draw(bool visible);
+
+public:
+    ColorPoint(
+        float x,
+        float y,
+        Color color = Color::White,
+        bool visible = false
+    ) : PointBase(x, y, false), color(color)
+    {
+        if (visible) show();
+    }
+
+    ColorPoint(): PointBase(0,0,false), color(Color::Transparent)
+    {}
+    Color getColor() const;
+    void setColor(Color newColor);
+};
+
+void ColorPoint::draw(bool visible)
+{
+    auto col = Color::Transparent;
+    if (visible)
+        col = color;
+    object.setFillColor(col);
+    object.setOutlineColor(col);
+    object.setOutlineThickness(1);
+    object.setPosition(x, y);
+    window.draw(object);
+}
+
+Color ColorPoint::getColor() const
+{
+    return color;
+}
+
+void ColorPoint::setColor(Color newColor)
+{
+    color = newColor;
+    if (visible) show();
+}
+#pragma endregion
 
 int main()
 {
@@ -136,7 +188,11 @@ int main()
     {
         float x = rand() % 800;
         float y = rand() % 600;
-        points[i] = new PointBase(x, y, true);
+        int t = rand() % 10;
+        if (t < 5)
+            points[i] = new ColorPoint(x, y, Color::Red, true);
+        else
+            points[i] = new PointBase(x, y, true);
     }
     window.display(); // отрисовываем окно
     _getch();

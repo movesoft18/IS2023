@@ -17,6 +17,7 @@ int main()
     }
     cout << "Ширина изображения: " << img.cols << endl;
     cout << "Высота изображения: " << img.rows << endl;
+    cout << "Глубина изображения: " << img.depth() << endl;
 
     imshow("Lion", img);
 
@@ -29,7 +30,9 @@ int main()
     imwrite("lion_face.jpg", imgCrop);
 
     auto key = waitKey();
-    Mat resized, rotated, gray, bilevel;
+    Mat resized, rotated, gray, bilevel, imgCrop2;
+    imgCrop2 = img(Rect(150, 120, 200, 200));
+    imshow("Вырезано напрямую", imgCrop2);
     resize(imgCrop, resized, Size(), 5, 5);
     imshow("Изменен размер", resized);
     waitKey();
@@ -40,9 +43,9 @@ int main()
     cvtColor(rotated, gray, COLOR_BGR2GRAY);
     imshow("Серый", gray);
 
-    threshold(gray, bilevel, 220, 255, THRESH_OTSU);
+    threshold(gray, bilevel, 20, 255, THRESH_TRIANGLE);
     imshow("ЧБ", bilevel);
-
+    
     waitKey();
 
     destroyAllWindows();
