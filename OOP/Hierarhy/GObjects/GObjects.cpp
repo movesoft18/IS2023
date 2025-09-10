@@ -15,7 +15,7 @@ protected:
     float x, y; //координаты
     bool visible; // признак видимости
 
-    CircleShape object; // вспомогательное поле - объект sfml
+    /*static*/ CircleShape object; // вспомогательное поле - объект sfml
 public:
     PointBase(float x, float y, bool visible = false) :
         x(x), y(y), visible(visible), object(CircleShape(1))
@@ -38,6 +38,8 @@ public:
     float getX() const;
     float getY() const;
 };
+
+//CircleShape PointBase::object(1);
 
 PointBase::~PointBase()
 {
