@@ -78,12 +78,13 @@ int main()
 
 		//medianBlur(HSV, blurred, 21);
 		inRange(HSV, Scalar(hmin, smin, vmin), Scalar(hmax, smax, vmax), threshold);
+		//medianBlur(threshold, threshold, 9);
 		Moments mom = moments(threshold, true);
 		double dM01 = mom.m01; 
 		double dM10 = mom.m10;
 		double dArea = mom.m00;
 		//будем реагировать только на те моменты,
-		//которые содержать больше 100 пикселей
+		//которые содержать больше заданного кол-ва пикселей
 		if (dArea >= min && dArea < max)
 		{
 			x = dM10 / dArea;
