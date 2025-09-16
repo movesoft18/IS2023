@@ -64,7 +64,7 @@ int main()
 		return 1;
 	}
 #else
-	frame = imread("image.jpg");
+	frame = imread("v3.png");
 #endif
 	createTrackbar("H min:", trackbarWindow, &hmin, hmax);
 	createTrackbar("H max:", trackbarWindow, &hmax, hmax);
@@ -95,7 +95,9 @@ int main()
 		{
 			x = dM10 / dArea;
 			y = dM01 / dArea;
+#ifdef camera
 			circle(frame, Point(x, y), 10, Scalar(0, 0, 255), -1);
+#endif
 		}
 		imshow(mainWindow, frame);
 		imshow(thresholdWindow, threshold);
