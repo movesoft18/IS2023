@@ -39,6 +39,7 @@ y = dM01 / dArea
 using namespace std;
 using namespace cv;
 
+//#define camera
 
 int main()
 {
@@ -55,7 +56,16 @@ int main()
 	namedWindow(thresholdWindow);
 	namedWindow(mainWindow);
 	namedWindow(sizeWindow);
+#ifdef camera
 	VideoCapture capture;
+	capture.open(0);
+	if (!capture.isOpened()) {
+		cout << "Камера не может быть открыта." << endl;
+		return 1;
+	}
+#else
+	frame = imread("image.jpg");
+#endif
 	createTrackbar("H min:", trackbarWindow, &hmin, hmax);
 	createTrackbar("H max:", trackbarWindow, &hmax, hmax);
 	createTrackbar("S min:", trackbarWindow, &smin, smax);
@@ -65,14 +75,10 @@ int main()
 	createTrackbar("Size min:", sizeWindow, &min, max);
 	createTrackbar("Size max:", sizeWindow, &max, max);
 
-	capture.open(0);
-	if (!capture.isOpened()) {
-		cout << "Камера не может быть открыта." << endl;
-		return 1;
-	}
-
 	for (;;) {
+#ifdef camera
 		capture >> frame;
+#endif
 
 		cvtColor(frame, HSV, COLOR_BGR2HSV);
 
@@ -95,7 +101,9 @@ int main()
 		imshow(thresholdWindow, threshold);
 		if (waitKey(1) == 27) break;
 	}
+#ifdef camera
 	capture.release();
+#endif
 	destroyAllWindows();
 }
 
