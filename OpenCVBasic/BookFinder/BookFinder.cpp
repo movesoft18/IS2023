@@ -26,9 +26,8 @@ int main()
 	int total = 0;
 	vector<Point> approx;
 	vector<vector<Point>> drawing;	
-	for (auto c : cnts)
+	for (auto &c : cnts)
 	{
-
 		double peri = arcLength(c, true);
 		approxPolyDP(c, approx, 0.02 * peri, true);
 		if (approx.size() == 4)
