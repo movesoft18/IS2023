@@ -83,7 +83,10 @@ int main()
 		cvtColor(frame, HSV, COLOR_BGR2HSV);
 
 		//medianBlur(HSV, blurred, 21);
-		inRange(HSV, Scalar(hmin, smin, vmin), Scalar(hmax, smax, vmax), threshold);
+		inRange(HSV, 
+			Scalar(hmin, smin, vmin), 
+			Scalar(hmax, smax, vmax), 
+			threshold);
 		//medianBlur(threshold, threshold, 9);
 		Moments mom = moments(threshold, true);
 		double dM01 = mom.m01; 
