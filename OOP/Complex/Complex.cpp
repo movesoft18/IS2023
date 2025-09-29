@@ -30,6 +30,22 @@ public:
     Complex& operator -= (double c);
     Complex& operator *= (double c);
     Complex& operator /= (double c);
+    Complex operator - () const;
+    bool operator ! () const;
+
+    Complex& operator ++(); // префиксный ++х
+    Complex& operator --(); // префиксный --х
+    Complex operator ++(int); // постфиксный х++
+    Complex operator --(int); // постфиксный х--
+
+    Complex& operator = (const Complex& other)
+    {
+        if (&other == this)
+            return *this;
+        a = other.a;
+        b = other.b;
+        return *this;
+    }
 
     friend Complex operator + (double c1, const Complex& c2);
     friend istream& operator >> (istream& in, Complex& c);
@@ -153,6 +169,44 @@ Complex& Complex::operator/=(double c)
     return Div(c);
 }
 
+Complex Complex::operator-() const
+{
+    return Complex(-a, -b);
+}
+
+bool Complex::operator!() const
+{
+    if (a == 0 && b == 0)
+        return false;
+    return true;
+}
+
+Complex& Complex::operator++()
+{
+    a += 1;
+    return *this;
+}
+
+Complex& Complex::operator--()
+{
+    a -= 1;
+    return *this;
+}
+
+Complex Complex::operator++(int)
+{
+   Complex temp(a, b);
+   a += 1;
+   return temp;
+}
+
+Complex Complex::operator--(int)
+{
+    Complex temp(a, b);
+    a -= 1;
+    return temp;
+}
+
 /*
 тип_результата operator + (список_параметров_операндов)
 {
@@ -231,6 +285,9 @@ int main()
 
     x3 = 777 + x3 + x1 + x2 + 555;
     cout << x3.ToString() << '\n';
+
+    x3 = x2;
+    x2 = x2;
 }
 
 
