@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "List", "List\List.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "martix", "martix\martix.vcxproj", "{41FB6702-D060-4B23-87A4-A0B512DF4CF0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InterfaceExample", "InterfaceExample\InterfaceExample.vcxproj", "{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{41FB6702-D060-4B23-87A4-A0B512DF4CF0}.Release|x64.Build.0 = Release|x64
 		{41FB6702-D060-4B23-87A4-A0B512DF4CF0}.Release|x86.ActiveCfg = Release|Win32
 		{41FB6702-D060-4B23-87A4-A0B512DF4CF0}.Release|x86.Build.0 = Release|Win32
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Debug|x64.ActiveCfg = Debug|x64
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Debug|x64.Build.0 = Debug|x64
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Debug|x86.ActiveCfg = Debug|Win32
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Debug|x86.Build.0 = Debug|Win32
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Release|x64.ActiveCfg = Release|x64
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Release|x64.Build.0 = Release|x64
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Release|x86.ActiveCfg = Release|Win32
+		{7A6C52E2-2584-4766-92C7-BCD7690FC8CF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

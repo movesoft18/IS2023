@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-class Animal
+class Animal abstract
 {
 protected:
     string name;
@@ -17,11 +17,15 @@ public:
         cout << "Имя: " << name << " Вес: " << weight << "кг. Хищник: " << (isPredator ? "Да" : "Нет") << endl;
     }
 
-    virtual void Say()
-    {
-        cout << "Молчание" << endl;
-    }
+    virtual void Say() = 0;
+    //virtual void Say() abstract;
+
 };
+
+void Animal::Say()
+{
+    cout << "Мяу" << endl;
+}
 
 class Cat : public Animal
 {
@@ -29,7 +33,8 @@ public:
     Cat(double weight) : Animal("Кошка", weight, true) {}
     void Say() override
     {
-        cout << "Мяу!" << endl;
+        //cout << "Мяу!" << endl;
+        Animal::Say();
     }
 };
 
@@ -72,7 +77,8 @@ public:
 int main()
 {
     setlocale(LC_ALL, "");
-    Animal* animals[4];
+    Animal* animals[5];
+    //animals[4] = new Animal();
     animals[0] = new Cat(3); // заметьте – создаем кошку, а результат помещаем в указатель на базовый класс Animal (Upcast по умолчанию)
     animals[1] = new Cow(300); // заметьте – создаем корову, а результат помещаем в указатель на базовый класс Animal (Upcast по умолчанию)
     animals[2] = new Dog(30); // заметьте – создаем собаку, а результат помещаем в указатель на базовый класс Animal (Upcast по умолчанию)
