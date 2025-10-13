@@ -42,6 +42,8 @@ int main()
         Scalar(255, 255, 255), // цвет
         2                   // толщ. линии
     );
+    //Mat picture = imread("1.png", IMREAD_UNCHANGED);
+    //picture.copyTo(image(Rect(Point(100,100),picture.size())));
     imshow("Image", image);
     waitKey();
     destroyAllWindows();
