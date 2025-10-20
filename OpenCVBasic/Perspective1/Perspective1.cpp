@@ -57,7 +57,7 @@ void onMouse(
 
 int main()
 {
-
+    
     setlocale(LC_ALL, "");
     Mat image, tmp, edited;
 
