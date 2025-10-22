@@ -41,6 +41,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FaceDetection", "FaceDetect
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PlateDetector", "PlateDetector\PlateDetector.vcxproj", "{551E2A98-91F4-4ABE-92B9-C62CA85A4E85}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Operations", "Operations\Operations.vcxproj", "{6FA6D6D6-58E0-4229-A69F-97A084226362}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -201,6 +203,14 @@ Global
 		{551E2A98-91F4-4ABE-92B9-C62CA85A4E85}.Release|x64.Build.0 = Release|x64
 		{551E2A98-91F4-4ABE-92B9-C62CA85A4E85}.Release|x86.ActiveCfg = Release|Win32
 		{551E2A98-91F4-4ABE-92B9-C62CA85A4E85}.Release|x86.Build.0 = Release|Win32
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Debug|x64.ActiveCfg = Debug|x64
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Debug|x64.Build.0 = Debug|x64
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Debug|x86.ActiveCfg = Debug|Win32
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Debug|x86.Build.0 = Debug|Win32
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Release|x64.ActiveCfg = Release|x64
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Release|x64.Build.0 = Release|x64
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Release|x86.ActiveCfg = Release|Win32
+		{6FA6D6D6-58E0-4229-A69F-97A084226362}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
