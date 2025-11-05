@@ -9,7 +9,11 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "");
-    Mat img = imread("lion.png", IMREAD_COLOR);
+    Mat directImage(480, 640, CV_8UC3, Scalar(0, 0, 0));
+    Mat directImage1(480, 640, CV_8UC3, Scalar::all(0));
+    Mat oneChannelImage(480, 640, CV_8UC1, 0);
+    imwrite("black.jpg", directImage);
+    Mat img = imread("lion.png");
     if (img.empty())
     {
         cout << "Error reading file!\n";
@@ -28,6 +32,7 @@ int main()
     Mat imgCrop = imgCopy(selected);
     imshow("Вырезка", imgCrop);
     imwrite("lion_face.jpg", imgCrop);
+   
 
     auto key = waitKey();
     Mat resized, rotated, gray, bilevel, imgCrop2;

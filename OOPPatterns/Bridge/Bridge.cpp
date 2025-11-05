@@ -1,7 +1,4 @@
-﻿// Bridge.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include <iostream>
+﻿#include <iostream>
 
 #include <string>
 using namespace std;
@@ -45,6 +42,34 @@ private:
     int    port;
 };
 
+class LoggerImpl
+{
+public:
+    virtual ~LoggerImpl() {}
+    virtual void console_log(const string& str) = 0;
+    virtual void file_log(
+        const string& file, const string& str) = 0;
+    virtual void socket_log(
+        const string& host, int port, const string& str) = 0;
+};
+
+class ST_LoggerImpl : public LoggerImpl
+{
+public:
+    void console_log(const string& str);
+    void file_log(const string& file, const string& str);
+    void socket_log(
+        const string& host, int port, const string& str);
+};
+
+class MT_LoggerImpl : public LoggerImpl
+{
+public:
+    void console_log(const string& str);
+    void file_log(const string& file, const string& str);
+    void socket_log(
+        const string& host, int port, const string& str);
+};
 
 // Logger.cpp - Абстракция
 
@@ -99,34 +124,7 @@ void SocketLogger::log(const string& str)
     pimpl->socket_log(host, port, str);
 }
 
-class LoggerImpl
-{
-public:
-    virtual ~LoggerImpl() {}
-    virtual void console_log(const string& str) = 0;
-    virtual void file_log(
-        const string& file, const string& str) = 0;
-    virtual void socket_log(
-        const string& host, int port, const string& str) = 0;
-};
 
-class ST_LoggerImpl : public LoggerImpl
-{
-public:
-    void console_log(const string& str);
-    void file_log(const string& file, const string& str);
-    void socket_log(
-        const string& host, int port, const string& str);
-};
-
-class MT_LoggerImpl : public LoggerImpl
-{
-public:
-    void console_log(const string& str);
-    void file_log(const string& file, const string& str);
-    void socket_log(
-        const string& host, int port, const string& str);
-};
 
 
 // LoggerImpl.cpp - Реализация
