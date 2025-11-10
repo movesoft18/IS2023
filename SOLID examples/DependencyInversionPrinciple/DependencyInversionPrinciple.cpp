@@ -18,7 +18,7 @@ public:
 
     void Print()
     {
-        cout << Text << endl;
+        Printer.Print(Text);
     }
 };
 
@@ -53,7 +53,7 @@ class ConsolePrinter : public IPrinter
 {
     void Print(string text) override
     {
-        cout << "Печать на консоли\n";
+        cout << "Печать на консоли\n" << text;
     }
 };
 
@@ -61,7 +61,7 @@ class HtmlPrinter : public IPrinter
 {
     void Print(string text) override
     {
-        cout << "Печать в html\n";
+        cout << "Печать в html\n" << text;
     }
 };
 

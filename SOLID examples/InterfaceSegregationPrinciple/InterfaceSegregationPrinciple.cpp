@@ -326,5 +326,7 @@ int main()
 {
     Photograph photograph;
     Phone myPhone;
-    photograph.TakePhoto(myPhone);
+    Camera camera;
+    photograph.TakePhoto(&myPhone);
+    photograph.TakePhoto(&camera);
 }
